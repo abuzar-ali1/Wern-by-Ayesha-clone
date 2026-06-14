@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const ProductCard = ({ product }) => {
+
+const ProductCard = ({ product , onAddToCart }) => {
+    const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
+  const [selectedQty, setSelectedQty] = useState(1);
   return (
     // 'break-inside-avoid mb-4' ensures the masonry layout doesn't break a card across columns
     <div className="break-inside-avoid mb-4 bg-white border border-gray-200 rounded-sm overflow-hidden shadow-sm">
@@ -58,7 +61,10 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* Add to Cart Button */}
-        <button className="w-full bg-[#007bff] hover:bg-[#0069d9] text-white py-2 mt-2 rounded-sm font-medium transition-colors text-sm">
+        <button 
+        onClick={() => onAddToCart(product, selectedSize, selectedQty)}
+        
+        className="w-full bg-[#007bff] hover:bg-[#0069d9] text-white py-2 mt-2 rounded-sm font-medium transition-colors text-sm">
           Add to Cart
         </button>
 

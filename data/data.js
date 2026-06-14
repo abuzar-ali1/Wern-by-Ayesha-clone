@@ -144,7 +144,7 @@ export const productsData = [
     "imageUrl": "/images/products/bow-loafers-rose-gold.jpg"
   },
   {
-    "id": "bow-loafers-copper",
+    "id": "bow-loafers-copper", 
     "name": "Bow Loafers",
     "color": "Copper",
     "price": 2950,
